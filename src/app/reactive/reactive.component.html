@@ -1,0 +1,73 @@
+<!-- app.component.html -->
+<div class=".container-fluid mt-4 mx-4">
+    <h2 class="mb-4">Reactive Forms Example</h2>
+  
+    <!-- Form Start -->
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  
+      <!-- Name Field -->
+      <div class="form-group mb-3">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          formControlName="name"
+        />
+        <div *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched" class="text-danger">
+          Name is required.
+        </div>
+      </div>
+  
+      <!-- Email Field -->
+      <div class="form-group mb-3">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          formControlName="email"
+        />
+        <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched" class="text-danger">
+          Enter a valid email.
+        </div>
+      </div>
+  
+      <!-- Gender Field -->
+      <div class="form-group mb-3">
+        <label for="gender">Gender:</label>
+        <select
+          id="gender"
+          class="form-control"
+          formControlName="gender"
+        >
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <div *ngIf="userForm.get('gender')?.invalid && userForm.get('gender')?.touched" class="text-danger">
+          Gender is required.
+        </div>
+      </div>
+  
+      <!-- Accept Terms Checkbox -->
+      <div class="form-check mb-3">
+        <input
+          type="checkbox"
+          id="terms"
+          class="form-check-input"
+          formControlName="terms"
+        />
+        <label for="terms" class="form-check-label">Accept Terms</label>
+        <div *ngIf="userForm.get('terms')?.invalid && userForm.get('terms')?.touched" class="text-danger">
+          You must accept terms.
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">
+        Submit
+      </button>
+    </form>
+  </div>
+  

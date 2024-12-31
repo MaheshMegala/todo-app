@@ -1,0 +1,19 @@
+.container {
+
+    display: flex;
+  
+  }
+  
+  
+  
+  .left-column {
+    flex:4;
+
+  }
+  
+  .right-column {
+  
+    flex: 1;
+  
+  }
+  

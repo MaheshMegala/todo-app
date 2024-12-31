@@ -1,0 +1,22 @@
+<p>Default Format: {{ today | date }}</p>
+<p>Short Date: {{ today | date:'shortDate' }}</p>
+<p>Medium Date: {{ today | date:'mediumDate' }}</p>
+<p>Full Date: {{ today | date:'fullDate' }}</p>
+<p>Custom Format: {{ today | date:'dd-MM-yyyy' }}</p>
+<p>Custom Format with Time: {{ today | date:'dd-MM-yyyy, h:mm a' }}</p>
+<h1>Lowercase & Uppercase</h1>
+    <p>{{ 'angular' | uppercase }} <!-- ANGULAR --></p>
+    <p>{{ 'ANGULAR' | lowercase }} <!-- angular --></p>
+
+<h1>Others</h1>
+<p>{{ 12345.678 | currency:'INR':'symbol':'1.2-2' }} <!-- $12,345.68 --></p>
+<p>{{ 0.25 | percent }} <!-- 25% --></p>
+<p>{{ 1234.5676 | number:'1.1-2' }} <!-- 1,234.57 --></p>
+<p>{{ myObject | json }} <!-- {"name":"Angular"} --></p>
+<h1>Slice Pipe</h1>
+<p>{{ [1, 2, 3, 4, 5] | slice:1:4 }} <!-- [2, 3, 4] --></p>
+<h1>Key Value</h1>
+
+    <div *ngFor="let item of myObject | keyvalue">
+    {{ item.key }}: {{ item.value }}
+  </div>
